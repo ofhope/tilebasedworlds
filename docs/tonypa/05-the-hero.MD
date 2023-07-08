@@ -1,18 +1,23 @@
-THE HERO
+# THE HERO
 
 No game can exist without the hero. The hero will save the world and princess and beat up the bad guys. We will add hero too. He wont save the world yet, he wont do anything useful, but he is there:
 
+```
+EXAMPLE HERE
+```
 
 
 The hero is red square :) What, he doesnt look mighty? You can draw your own hero. His movie clip is in the library named "char" and its also been set up to be exported as "char". You should not make the hero movie clip larger then tiles.
 
 Also note, how hero movie clip (red square) has registration point centered and tiles movie clip has registration point in the upper left corner:
 
-
+![](p06_2.gif)
 
 Want some code? Add the line after tiles definitions:
 
+```
 char={xtile:2, ytile:1};
+```
 This code declares new "char" object. The char object will hold all the information about our character, how he moves, how he feels, what he eats.
 
 This time we will give char object only two properties, xtile and ytile. Those give us the tile our hero stands on. When he moves around, we will update the xtile/ytile properties and we will always know what tile is under the hero. For example, when xtile=2 and ytile=1 (like we wrote), that means hero is standing on the tile "t_1_2". When you look at the example movie, you see that hero stands on the tile 3 positions left and 2 positions down from the upper left corner of our game. All the tiles start counting from 0.
@@ -21,6 +26,7 @@ We will add more properties to hero later.
 
 To place hero movie clip on stage, add following lines to the buildMap function after the for loops:
 
+```
 game.clip.attachMovie("char", "char", 10000);
 char.clip = game.clip.char;
 char.x = (char.xtile * game.tileW) + game.tileW / 2;
@@ -29,6 +35,7 @@ char.width = char.clip._width / 2;
 char.height = char.clip._height / 2;
 char.clip._x = char.x;
 char.clip._y = char.y;
+```
 First line does attach new movie clip from the library in the game.clip (you remember that we saved path to the _root.tiles as game.clip in the last chapter) and give this instance name "char".
 
 Then we save the path to the char movie clip into char object, so every time we want to access the movie clip, we can use simpler char.clip instead of typing this movie clip's full path _root.tiles.char. It also saves us from going through all the code if we might need to move char movie clip to somewhere else.

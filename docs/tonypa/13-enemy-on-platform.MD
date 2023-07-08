@@ -1,28 +1,37 @@
-ENEMY ON PLATFORM
+# ENEMY ON PLATFORM
 
 If you want to have enemies in the side view jumping game like this (in the second room):
 
-
+```
+EXAMPLE HERE
+```
 
 You only need to change couple of lines. The enemy will walk on the platform and detect the end of platform. In the end enemy will turn around and walk back. This requires enemy to check for platform below the next tile he would be on:
 
+```
 getMyCorners (ob.x + ob.speed * ob.xMove, ob.y + ob.speed * ob.yMove + 1, ob);
 if (!ob.downleft and !ob.downright)
 {
 	...
+```
+
 Important number to notice here, is 1 in the ob.y+ob.speed*ob.yMove+1. That will check for wall below next tile. Also note how if statement will be tru only if both upleft and upright corner are walls, if one of them is walkable tile, enemy would walk into air.
 
 You can download the source fla with all the code and movie set up here.
 
 
-TEACHING THE ENEMY SOME TRICKS
+## TEACHING THE ENEMY SOME TRICKS
 
 What if our enemy could change direction, not only reverse the direction:
 
+```
+EXAMPLE HERE
+```
 
 
 Lets modify enemyBrain function. When we last time just reversed ob.xMove and ob.yMove, now we will choose randomly new direction to move:
 
+```
 	...
 }
 else
@@ -39,6 +48,8 @@ else
 		ob.yMove = 0;
 	}
 }
+```
+
 When enemy would hit the wall, xMove will get random value. random(2) will have value 0 or 1. If xMove was 0, we set yMove randomly to 1 or -1.
 random(2) is 0 or 1.
 random(2)*2 is 0 or 2.
@@ -52,10 +63,13 @@ You can download the source fla with all the code and movie set up here.
 
 Thats much nicer, but if we want to make enemy better, we should avoid reversing the last direction.
 
-
+```
+EXAMPLE HERE
+```
 
 Write code:
 
+```
 	...
 }
 else
@@ -81,6 +95,8 @@ else
 		}
 	}
 }
+```
+
 This time we first check the current direction. If for example we moved vertically (xMove==0) then we choose randomly 1 or -1 for xMove and set yMove to 0. But if enemy moves into corner, his new direction might send him again into wall. Thats why we get the corner points with new direction and if we detect wall, we reverse the new direction.
 
 You can download the source fla with all the code and movie set up here.
@@ -91,20 +107,28 @@ Ok, enemy moves better since player cant predict where enemy is going to step ne
 
 We will add a chance for enemy to change direction even when he doesnt hit the wall.
 
-
+```
+EXAMPLE HERE
+```
 
 I havent figured good description for ability to change direction while walking, so lets add each enemy new property called "turning":
 
+```
 game.Enemy1.prototype.turning = 5;
 game.Enemy2.prototype.turning = 5;
+```
+
 Turning will represent the chance to randomly change direction in each step. Value of 0 will mean enemy never changes direction, value 100 will make him choose new direction in each step (thats funny, you should try that out).
 
 And to make enemy choose new direction, add to the if statement:
 
+```
 if (ob.downleft and ob.upleft and ob.downright and ob.upright and random(100)
 				                               > ob.turning)
 {
 	...
+```
+
 In case random(100) will have value less then value of ob.turning, we will choose new direction even when we could continue same way.
 
 You can download the source fla with all the code and movie set up here.

@@ -1,17 +1,13 @@
-WELCOME
-Here you can read some tutorials about making tile based games with Macromedia Flash.
+---
 
-These tutorial are heavily based on OutsideOfSociety tutorials by Klas Kroon. Go and read them anyway, those are one of best you can find.
+---
+# Tile Based Worlds
 
-These tutorials expect you to know something about actionscript and Macromedia Flash. They might be too hard to understand, if you never before made any games with Flash. And as my English is not very good, there are probably lots of mistakes and some parts might not be well explained. Im sorry, I do my best. If you find bugs or mistakes, let me know.
+This set of tutorials was inspired by Tonypa's tile-based tutorials by Tonu Paldra. Originally published here `http://www.tonypa.pri.ee/tbw/index.html` but the domain has since dropped. I stumbled across the content on an Action Script dev forum [goToAndPlay](http://www.gotoandplay.it/_articles/2004/02/tonypa.php).  And wanted to modernise this work. This series of posts was a huge piece of inspiration for me back in the day (10+ years ago now). I was so excited to discover the mechanics behind some of my favourite games like Pokemon, Advanced Wars, Fire Emblem and Final Fantasy.
 
-I have used Flash5 to create the code and source files. Mainly because I am used to Flash5 and I work fast with it. The code and source files work well in FlashMX (ver6) too, you shouldnt have problems with them. The FlashMX2004 (ver7) with new AS2 is not compatible with older actionscript, so the code might fail. It might work too, but generally, if you really want to use AS2, you should write new code yourself. The principles, of course, you can still use, so it might be worth look through the tutorials anyway.
+The original tutorials were written for Action Script 2.0 and Macromedia Flash (before Adobe brought it). Here I'd like to focus on Javascript and Browser first in a native format. This is free and accessible to everyone without requiring any libraries. There are some other great options like PyGame or C++ and SDL2 or Lua Love. If time allows I'll update the examples to include these but if not they're worth exploring yourself.
 
-Examples and code and source files presented here are free to use. You can modify them as you wish, you can use them anyway you like.
+The aim is to demystify some of the mechanics and ultimately inspire you the reader to go out and make some games your self.
 
-I hope someone finds something useful here :)
-
-Thanks
-Tony
-
-http://www.tonypa.pri.ee/
+## Licensing 
+A brief note about licensing. All the writing and media published here will be under a creative commons licence meaning you need to attribute if you're going to use it. But all code will be Open Source so you're free to use and modify for personal and commercial use with any warranty. 

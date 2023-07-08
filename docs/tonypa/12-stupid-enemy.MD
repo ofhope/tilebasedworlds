@@ -1,27 +1,33 @@
-STUPID ENEMY
+# STUPID ENEMY
 
 We have worked hard to get our hero moving, but he has no challenge. We need something more. No, we dont need food and drinks and pretty girls, what we need, is some enemies. Enemies are like salt in the soup, without it everything tastes lame. Good games have smart enemies, but we will start with simple dumb enemies. All they do, is walk back and worth and check if they have touched the hero:
 
-
+```
+EXAMPLE HERE
+```
 
 So far we have had two types of objects: hero and tiles. Hero is moved by the player, tiles wont move. The enemies will be like hero, only player cant move them, we will give them brains for moving. We will make two different enemies, first will walk up and down, second will walk left and right. They both will turn around when they hit the wall.
 
 Before you start to think your game needs very-very complex enemies, think again. Many games dont actually use smart enemies, or if they do, not all of them are too bright. You dont have unlimited resources with Flash, so your 100 smart enemies using complex A* pathfinding will slow down your game too much. If you can, make some enemies dumb and some smarter, in the end player might not even notice the difference. Beside, we all know how we like to be smarter then others, so let the player feel that joy too. :)
 
 
-PREPARE THE ENEMY
+## PREPARE THE ENEMY
 
 Create enemy movie clips same way you made hero (look at the tutorial "The Hero" if you forgot). They should have 4 keyframes with left/up/down/right animations. They should also be set exported as "enemy1" and "enemy2". Now lets add enemies array:
 
+```
 myEnemies = [
 [0],
 [[1, 6, 1]],
 [[2, 1, 3]]
 ];
+```
+
 So, for the map1 we have declared 1 array representing 1 enemy. The numbers give us the type of enemy (woohooo! we have more then one type of dumb enemies) and its starting position. When map is built, the enemy is placed on the tile x=6, y=1. Same way we have 1 enemy in map2, but thats different type. You can add more enemies into one map, but you have to place them into walkable tiles, not inside the walls.
 
 Lets declare some templates for enemies:
 
+```
 game.Enemyp1 = function () {};
 game.Enemyp1.prototype.xMove = 0;
 game.Enemyp1.prototype.yMove = 1;
@@ -31,6 +37,8 @@ game.Enemyp2 = function () {};
 game.Enemyp2.prototype.xMove = 1;
 game.Enemyp2.prototype.yMove = 0;
 game.Enemyp2.prototype.speed = 2;
+```
+
 They look similar, but they behave different way. Enemyp1 will walk vertically because its property yMove is 1, but Enemyp2 will walk left and right. You can set enemies xMove/yMove properties into 1 or -1 or 0. Those are same values we pass to the moveChar function from detect keys function. Please avoid setting both xMove/yMove to non-zero unless you want your enemies to move diagonally.
 
 If you make both xMove and yMove equal to 0, you will have non-moving enemy. Thats not much fun, but you never know what you might need.
@@ -38,10 +46,11 @@ If you make both xMove and yMove equal to 0, you will have non-moving enemy. Tha
 The speed property determines how fast enemy will move. Different enemies can have different speeds too.
 
 
-PLACE THE ENEMY
+## PLACE THE ENEMY
 
 In the buildMap function add after doors and before char following piece of code:
 
+```
 var enemies = myEnemies[game.currentMap];
 game.currentEnemies = enemies.length;
 for (var i = 0; i < game.currentEnemies; ++i)
@@ -59,11 +68,16 @@ for (var i = 0; i < game.currentEnemies; ++i)
 	game[name].clip._x = game[name].x;
 	game[name].clip._y = game[name].y;
 }
+```
+
 Whats happening here? First we get enemies array for current map. Next we will set variable currentEnemies to the length of enemies array so we can always know how many enemies we have created. Then we loop through the enemies array (remember, we currently used only 1 enemy in each map, but there can be more).
 
 Variable name will have the name of our new enemy, so they are named "enemy0", "enemy1", "enemy2"... Then we make new enemy object from the templates we declared earlier:
 
+```
 game[name]= new game["Enemy" + enemies[i][0]];
+```
+
 from the enemies array we get the number in first position of first enemy. In our example there is number 1, so, new enemy is created using Enemy1 template. In map2 the enemy is made using Enemy2 template because in myEnemies array there is number 2.
 
 Next lines will add starting coordinates, width and height to the enemy object. Then its position is calculated and enemy is placed into correct position.
@@ -71,10 +85,11 @@ Next lines will add starting coordinates, width and height to the enemy object. 
 But, you may cry out loud, but he doesnt move! No worry, we will make him move.
 
 
-MOVE THE ENEMY
+## MOVE THE ENEMY
 
 Like most people, most enemies need brains. And so, lets write enemyBrain function:
 
+```
 function enemyBrain ()
 {
 	for (var i = 0; i < game.currentEnemies; ++i)
@@ -100,6 +115,8 @@ function enemyBrain ()
 		}
 	}
 }
+```
+
 As you can see, we again loop through all the enemies using variable game.currentEnemies. ob reffers in every step to the current enemy object. When i=0, ob=enemy0 and so on.
 
 We then call getMyCorners function to check if enemy will step into wall. If he wont go into wall, all the variables upleft, downleft, upright and downright will be true saying those tiles are walkable. Its safe to call moveChar function using xMove and yMove properties (which are -1, 0 or 1) same way we called moveChar from key detection to move char, but since we pass enemy object to moveChar, the enemy will be moved. Told you we can reuse same function to move many objects :)
@@ -110,7 +127,10 @@ Last part of brains checks if enemy is close enough to the hero and if they are 
 
 To call this function in every step, add line in the end of detectKeys function:
 
+```
 _root.enemyBrain();
+```
+
 Thats it, you can add simple enemies to be avoided. Next chapter we make our enemies behave more like human being, that is, run around until hitting the wall, then change the direction and run more.
 
 You can download the source fla with all the code and movie set up here.
