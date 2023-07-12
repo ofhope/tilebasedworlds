@@ -56,6 +56,7 @@ Next 2 lines give that Tile0 object and every object created with Tile0 prototyp
 
 
 ## MAKE MY MAP SHOW
+
 Are you ready to make some tiles? We will make function buildMap that will handle all the tiles placement. If you want to create more levels, you can use same function with different map array. buildMap function will do following:
 
 attach container movie clip
