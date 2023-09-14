@@ -8,7 +8,7 @@ The aim of this site is to educate and inspire. No programming experience is req
 2. [Why tiles?](./01-why-tiles.MD)
 3. [Map format](./02-map-format.MD)
 4. [More maps](./03-more-maps.MD)
-5. [Rendering a map](./04-more-maps.MD)
+5. [Rendering maps](./04-render-map/04-render-map)
 6. [The Hero](./05-the-hero.MD)
 
 ----
