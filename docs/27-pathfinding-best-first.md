@@ -1,3 +1,4 @@
+
 # MORE PATHFINDING
 
 The breath-first search we created in last chapter, is not too fast. Thats why this time we look into faster algorithm, that would allow usage of larger maps without slowing down the game:

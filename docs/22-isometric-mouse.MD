@@ -6,7 +6,7 @@ Now that we know how to make isometric view and how to control the hero with mou
 EXAMPLE HERE
 ```
 
-Nothing really new here, we take [isometric](./20-isometric-view.md) tutorial and change keyboard control to the [mouse](./21-mouse-to-move.md) control.
+Nothing really new here, we take [isometric](21-isometric-view.md) tutorial and change keyboard control to the [mouse](20-mouse-to-move.md) control.
 
 
 ## CONVERTING FROM ISOMETRIC

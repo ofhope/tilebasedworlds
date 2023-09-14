@@ -20,7 +20,7 @@ In some case tile might not be equal in number of steps they take to walk over t
 Pathfinding can take very long time. Specially on the bigger maps, with lots of tiles to search through, it can take several seconds to find the path. As you know, Flash is not extremely powerful and if your game stops every now and then to find paths, its not playable anymore. Before you add pathfinding to your game, think. Do you really need it? Can you make it faster? Can you cheat to create not-so-perfect-but-still-nice-paths?
 
 
-## BREATH-FIRST
+## BREADTH-FIRST
 
 The pseudo code for the breath-first search is very clearly explained in this link and please read the great article here. My example follows the pseudo code.
 
