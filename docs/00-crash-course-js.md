@@ -205,11 +205,11 @@ const Person3 = {
 }
 ```
 
-Now lets look at the next tool to organise stuff. The Array
+Now let's look at the next tool to organise stuff. The Array
 
 ### The Array
 
-So arrays are very similar in that they wrap other values. But now instead of using the curly bracket `{}` the use square brackets `[]`. Oh and they don't have properties... you could say their values are nameless. So lets look at converting one of our people objects into an array
+So arrays are very similar in that they wrap other values. But now instead of using the curly bracket `{}` they use square brackets `[]`. Oh, and they don't have properties... you could say their values are nameless. So let's look at converting one of our people objects into an array
 
 ```js
 const Person = [
@@ -224,9 +224,9 @@ const Person = [
 ]
 ```
 
-All these properties names are gone, it almost looks neater... rather than using names that we're in control of they use an index. The index isn't controlled by us, the computer handles that. The index acts like letter boxes on a street. They count up as you go along. And they oddly start at zero `0`.
+All these property names are gone, it almost looks neater... rather than using names that we're in control of they use an index. The index isn't controlled by us, the computer handles that. The index acts like letter boxes on a street. They count up as you go along. And they oddly start at zero `0`.
 
-Lets access a property from this Person array. To do this we use the square brackets again along with the index of the thing we want to access. Lets get the first thing in there which is the age, so thats index zero.
+Let's access a property from this Person array. To do this we use the square brackets again along with the index of the thing we want to access. Let's get the first thing in there which is the age, so that's index zero.
 
 ```js
 Person[0]
@@ -238,13 +238,13 @@ We could use this in expressions.
 Person1[0] + Person2[0]
 ```
 
-Lets get the first name which is the next one along from the first. So the next one up from zero is one.
+Let's get the first name which is the next one along from the first. So the next one up from zero is one.
 
 ```js
 Person[1]
 ```
 
-Although things are a little too neat here. By using an array for this kind of information it becomes really hard to remember which one is the first name or the last name... Actually, if we didn't have the previous example, there is no way for me to know which name is which. So although we can use an array here we are probably better off using an object. An object as the name implies is one thing
+Although things are a little too neat here. By using an array for this kind of information it becomes really hard to remember which one is the first name or the last name... If we didn't have the previous example, there is no way for me to know which name is which. So although we can use an array here we are probably better off using an object. An object as the name implies is one thing
 
 **Object:**
 > a material thing that can be seen and touched
@@ -253,4 +253,4 @@ Although things are a little too neat here. By using an array for this kind of i
 > an ordered series or arrangement.
 
 ## Reusing stuff
-(Functons)
+(Functions)
