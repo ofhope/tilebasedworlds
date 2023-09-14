@@ -1,6 +1,6 @@
 # MAP FORMAT
 
-We will hold our maps in nice format Flash provides: arrays. If you dont know, what is an array, open up Flash help and read first.
+Maps are a type of 
 
 
 ## TWO DIMENSIONAL ARRAY

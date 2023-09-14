@@ -9,5 +9,3 @@ The original tutorials were written for Action Script 2.0 and Macromedia Flash (
 
 The aim is to demystify some of the mechanics and ultimately inspire you the reader to go out and make some games your self.
 
-## Licensing 
-A brief note about licensing. All the writing and media published here will be under a creative commons licence meaning you need to attribute if you're going to use it. But all code will be Open Source so you're free to use and modify for personal and commercial use with any warranty. 

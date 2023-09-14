@@ -1,12 +1,12 @@
 # CREATING TILES
 
-Like you saw from chapter "Map format", we will have our map in two-dimensional array. Now we will make the tiles appear on the screen, place them in correct position and make them show correct frame. Movie will look like this:
+As you saw in the chapter "Map format", we will have our map in a two-dimensional array. Now we will make the tiles appear on the screen by rendering the structure to view.
 
-```
-EXAMPLE HERE
-```
+The result should look like this:
 
-First we declare some objects and variables:
+<iframe width="400" height="442" src="https://editor.p5js.org/ofhope/full/ERY7ZwtFGh"></iframe>
+
+First, we declare some objects and variables:
 
 ```
 myMap = [

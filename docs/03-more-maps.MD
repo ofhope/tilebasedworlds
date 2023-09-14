@@ -14,23 +14,23 @@ When you have few different tile types and tiles wont change much, this is good 
 
 ## TREE IN THE DESERT
 
-Some maps have many different tiles, some have very few. For example, imagine the desert, where for miles and miles there is nothing but sand, if you are lucky, you can see few oasis. Or the sea, there is water and water and more water and finally small island.
+Some maps have many different tiles, some have very few. For example, imagine the desert, where for miles and miles there is nothing but sand, if you are lucky, you can see few oases. Or the sea, there is water and water and more water and finally a small island.
 
-If your map is made up from mostly same kind of tiles (sand) and you have only some small variation (trees), then two dimensional array is not good choise. It will hold too much dead information, rows of zeros before some other frame shows up. In this case you might be better to declare all the non-sand objects separately and let everything else be sand.
+If your map is made up of mostly the same kind of tiles (sand) and you have only some small variation (trees), then a two-dimensional array is not a good choice. It will hold too much dead information, and rows of zeros before some other frame shows up. In this case, it might be better to declare all the non-sand objects separately and let everything else be sand.
 
-Lets suppose you have 100x100 map and you have 3 trees there. You can write:
+Let's suppose you have a 100x100 map and you have 3 trees there. You can write:
 
 ```
 trees = [[23,6], [37,21], [55,345]]
 ```
 
-When creating the map, you step through trees array, place the trees and let every other tile show sand image. Thats much more simpler then writing down 100x100 two dimensional array.
+When creating the map, you step through the trees array, place the trees and let every other tile show a sand image. That is much simpler than writing down a 100x100 two-dimensional array.
 
 Of course, when you make more objects (trees, bushes, grass, stones, water), this method loses much of its speed and it might become hard to remember what tiles are placed where.
 
 S, M, XXXL
 
-If you have Flash MX or later, you have probably heard of magic shortcut XML. It is similar format to HTML, that allows declaration of many things. You can use XML to hold your map data.
+If you have Flash MX or later, you have probably heard of the magic shortcut XML. It is a similar format to HTML, that allows declaration of many things. You can use XML to hold your map data.
 
 Following XML map explanation is based on the Jobe Makar's book "Macromedia Flash MX Game Design Demystified".
 
@@ -56,11 +56,11 @@ Lets look at the sample map in XML:
 </map>
 ```
 
-Here we have set 3x3 map. First there is header "map". Then 3 "row" nodes is set. Each of them has 3 "cell" nodes.
+Here we have set a 3x3 map. First, there is the header "map". Then 3 "row" nodes are set. Each of them has 3 "cell" nodes.
 
-To load maps from external files, XML might be good solution as most of XML parsing can be done with Flash MX built-in functions. Loading two dimensional arrays from text files is not that easy, you always get string from loading variables and you have to split the string into array, which again, is very slow.
+To load maps from external files, XML might be a good solution as most of XML parsing can be done with Flash MX built-in functions. Loading two-dimensional arrays from text files is not that easy, you always get a string from loading variables and you have to split the string into arrays, which again, is very slow.
 
 You can also see the disadvantages of XML: it leads to much bigger filesize and you need Flash 6 player for it.
 
-All the following examples use two dimensional array to hold map data and use objects when creating tiles on the screen like explained in the chapter "Map format".
+All the following examples use a two-dimensional array to hold map data and use objects when creating tiles on the screen as explained in the chapter "Map format".
 
